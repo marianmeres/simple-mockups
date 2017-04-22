@@ -6,7 +6,6 @@ Ultra simple html based app screen prototyping tool.
 
 * each mockup screen is one single file (quick visual overview...)
 * easy navigation between screens via `href="#screen-id"`
-* screen hierarchy automatically generated from filesystem
 * trivial PHP server side rendering (single file, &plusmn;20 lines of code)
 * table of contents and breadcrumbs automatically generated
 * everything fully and easily hackable (js, html, css, php)
