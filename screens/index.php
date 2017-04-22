@@ -15,7 +15,7 @@
         <li>each mockup screen == single file</li>
         <li>navigation between screens via <code>href="#screen-id"</code></li>
         <li>trivial PHP server side rendering (single file, &plusmn;20 lines of code)</li>
-        <li>table of contents and breadcrumbs automatically generated</li>
+        <li><a href="#_toc">table of contents</a> and breadcrumbs automatically generated</li>
         <li>everything fully and easily hackable (js, html, css, php)</li>
         <li>not intended as a visual prototyping tool (although possible)</li>
     </ul>
