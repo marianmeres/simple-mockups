@@ -18,9 +18,13 @@ Simple html based app screen prototyping tool.
 http://marian.meres.sk/simple-mockups-demo/  
 https://github.com/marianmeres/simple-mockups
 
-## Limitations
+## Notes
 
-Screen id is genereated from the filesystem path of the screen file where 
-directory separators are replaced with underscores, so usage of underscores 
-in file names will cause the breadcrumbs and TOC to not work correctly.
+Screens in the [TOC](http://marian.meres.sk/simple-mockups-demo/#_toc) are sorted 
+alphabetically by their filenames. If you need a specific order prefix the 
+filename with a digits just as I did in the [demo](https://github.com/marianmeres/simple-mockups/tree/master/screens/index).
+
+Screen id is genereated from the file path where directory separators are 
+replaced with underscores, so usage of underscores in file names will cause 
+the breadcrumbs and TOC to not work correctly.
 
