@@ -6,8 +6,8 @@
 <div class="wf--section__main">
 
     <p>
-        This demo shows the basic concept and usage of <a target="_blank"
-        href="https://github.com/marianmeres/simple-mockups">Simple Mockups</a>
+        This demo shows the basic concept and usage of
+        <a href="https://github.com/marianmeres/simple-mockups">Simple Mockups</a>
         &ndash; the html based app screen prototyping tool. Main features are:
     </p>
 
