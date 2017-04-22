@@ -1,5 +1,5 @@
 <header class="sm--section__header">
-    <a href="#menu" class="sm--section__header-right">&#x2630;</a>
+    <?php _nav_menu() ?>
     <h1>Intro</h1>
 </header>
 
