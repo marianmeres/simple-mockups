@@ -15,8 +15,8 @@
     <hr/>
 
     <p>
-        So, let's pretend we're prototyping a simple music app. The navigation flow
-        of our app may look like this:
+        So, let's pretend we're prototyping a simple music player app. The navigation
+        flow of our app may look like this:
     </p>
 
     <ul>
