@@ -8,17 +8,11 @@
     <p>
         This demo shows the basic concept and usage of
         <a href="https://github.com/marianmeres/simple-mockups">Simple Mockups</a>
-        &ndash; the html based app screen prototyping tool. Main features are:
+        &ndash; the html based app screen prototyping tool. Read more and check
+        the <a href="https://github.com/marianmeres/simple-mockups">source on GitHub</a>.
     </p>
 
-    <ul>
-        <li>each mockup screen == single file</li>
-        <li>navigation between screens via <code>href="#screen-id"</code></li>
-        <li>trivial PHP server side rendering (single file, &plusmn;20 lines of code)</li>
-        <li><a href="#_toc">table of contents</a> and breadcrumbs automatically generated</li>
-        <li>everything fully and easily hackable (js, html, css, php)</li>
-        <li>not intended as a visual prototyping tool (although possible)</li>
-    </ul>
+    <hr/>
 
     <p>
         So, let's pretend we're prototyping a simple music app. The navigation flow
