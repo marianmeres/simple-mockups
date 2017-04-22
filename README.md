@@ -1,6 +1,6 @@
 # Simple Mockups
 
-Simple html based app screen prototyping tool.
+Ultra simple html based app screen prototyping tool.
 
 ## Main features
 
@@ -10,8 +10,8 @@ Simple html based app screen prototyping tool.
 * trivial PHP server side rendering (single file, &plusmn;20 lines of code)
 * table of contents and breadcrumbs automatically generated
 * everything fully and easily hackable (js, html, css, php)
-* intended mainly as a navigation/structure prototyping tool not a visual one
-(although plaing with html is not limited)
+* intended mainly as a navigation/structure prototyping tool not as a visual one
+(although playing with html is not limited)
 
 ## Demo &amp; Source
 
@@ -22,9 +22,9 @@ https://github.com/marianmeres/simple-mockups
 
 Screens in the [TOC](http://marian.meres.sk/simple-mockups-demo/#_toc) are sorted 
 alphabetically by their filenames. If you need a specific order prefix the 
-filename with a digits just as I did in the [demo](https://github.com/marianmeres/simple-mockups/tree/master/screens/index).
+filename with digits just as I did in the [demo](https://github.com/marianmeres/simple-mockups/tree/master/screens/index).
 
-Screen id is genereated from the file path where directory separators are 
-replaced with underscores, so usage of underscores in file names will cause 
-the breadcrumbs and TOC to not work correctly.
+Screen id is generated from the file path where directory separators are 
+replaced with underscores, so usage of underscores in file names will most likely
+cause the breadcrumbs and TOC to not work correctly.
 
