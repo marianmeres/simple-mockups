@@ -183,6 +183,13 @@
         $(window).trigger('hashchange');
     </script>
 
+<?php
+    // load google analytics if provided
+    if (file_exists(__DIR__ . "/_ga.php")) {
+        include __DIR__ . "/_ga.php";
+    }
+?>
+
 </body>
 </html>
 
