@@ -1,9 +1,9 @@
-<header class="wf--section__header">
+<header class="sm--section__header">
     <?php _nav($parentId); ?>
     <h1>Albums</h1>
 </header>
 
-<div class="wf--section__main">
+<div class="sm--section__main">
 
     <b>T</b>
     <ul>

@@ -1,9 +1,9 @@
-<header class="wf--section__header">
+<header class="sm--section__header">
     <?php _nav($parentId); ?>
     <h1>Song: Alive</h1>
 </header>
 
-<div class="wf--section__main">
+<div class="sm--section__main">
 
     <p>
         Show song details and play controls...

@@ -14,7 +14,7 @@
             flex-direction: column;
         }
 
-        .wf--header {
+        .sm--header {
             width: 100%;
             padding: 15px;
             background: rgba(0, 0, 0, .1);
@@ -22,27 +22,27 @@
             line-height: 1;
         }
 
-        .wf--header h1 {
+        .sm--header h1 {
             line-height: inherit;
             font-size: inherit;
             margin: 0;
             float: left;
         }
 
-        .wf--header__toc {
+        .sm--header__toc {
             line-height: inherit;
             font-size: inherit;
             float: right;
         }
 
-        .wf--breadcrumb {
+        .sm--breadcrumb {
             padding: 15px;
             background: none;
             font-size: .9em;
             line-height: 1;
         }
 
-        .wf--main {
+        .sm--main {
             flex: 1;
             width: 100%;
             display: flex;
@@ -52,14 +52,14 @@
             padding: 0 15px;
         }
 
-        .wf--footer {
+        .sm--footer {
             padding: 15px;
             font-size: .9em;
             width: 100%;
             background: rgba(0,0,0,.05);
         }
 
-        .wf--section {
+        .sm--section {
             margin-bottom: 5rem;
             border: 1px solid rgba(0,0,0,.1);
             border-radius: 5px;
@@ -67,27 +67,27 @@
             max-width: 640px;
         }
 
-        .wf--section__header {
+        .sm--section__header {
             background: rgba(0,0,0,.05);
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             padding: 15px;
         }
 
-        .wf--section__header-left {
+        .sm--section__header-left {
             float: left;
             line-height: 1;
             padding-right: 15px;
         }
 
 
-        .wf--section__header-right {
+        .sm--section__header-right {
             float: right;
             line-height: 1;
             padding-left: 15px;
         }
 
-        .wf--section__header h1 {
+        .sm--section__header h1 {
             line-height: 1;
             font-size: 1em;
             margin: 0;
@@ -95,12 +95,12 @@
             font-weight: bold;
         }
 
-        .wf--section__main {
+        .sm--section__main {
             padding: 15px;
             min-height: 250px;
         }
 
-        .wf--section__footer {
+        .sm--section__footer {
             padding: 15px;
             border-top: 1px solid rgba(0,0,0,.1);
             text-align: center;
@@ -116,14 +116,14 @@
     </script>
 </head>
 <body>
-    <div class="wf--header clearfix">
+    <div class="sm--header clearfix">
         <h1>Simple Mockups Demo</h1>
-        <a href="#_toc" class="wf--header__toc">TOC</a>
+        <a href="#_toc" class="sm--header__toc">TOC</a>
     </div>
 
-    <nav class="breadcrumb wf--breadcrumb"></nav>
+    <nav class="breadcrumb sm--breadcrumb"></nav>
 
-    <main class="wf--main">
+    <main class="sm--main">
 
 <?php
     $dir = realpath('./screens/');
@@ -139,7 +139,7 @@
 ?>
     </main>
 
-    <footer class="wf--footer">
+    <footer class="sm--footer">
         <span>
             Created by
             <a href="https://github.com/marianmeres">Marian Meres</a>
@@ -206,7 +206,7 @@ function _renderSection($f, $baseDir) {
     $id = strtr($id, DIRECTORY_SEPARATOR, "_"); // replace slash for "_"
 
     echo "\n\n<!-- BEGIN: $id -->\n";
-    echo "<section id='$id' class='wf--section' style='" . ($id == 'index' ? '' : 'display:none;') . "'>";
+    echo "<section id='$id' class='sm--section' style='" . ($id == 'index' ? '' : 'display:none;') . "'>";
         // $id, $parentId and $depth are "globaly" available in each included php file
         include $f;
     echo "</section>\n";
@@ -221,13 +221,13 @@ function _renderSection($f, $baseDir) {
 
 // quick-n-dirty view helpers
 function _nav_back() {
-    ?><a href="javascript:history.back()" class="wf--section__header-left" title="Go back">&larr;</a><?php
+    ?><a href="javascript:history.back()" class="sm--section__header-left" title="Go back">&larr;</a><?php
 }
 function _nav_parent($parentId) {
-    ?><a href="#<?= $parentId ?>" class="wf--section__header-left" title="Go up in hierarchy">&uarr;</a><?php
+    ?><a href="#<?= $parentId ?>" class="sm--section__header-left" title="Go up in hierarchy">&uarr;</a><?php
 }
 function _nav_menu() {
-    ?><a href="#menu" class="wf--section__header-right">&#x2630;</a><?php
+    ?><a href="#menu" class="sm--section__header-right">&#x2630;</a><?php
 }
 function _nav($parentId) {
     _nav_back();

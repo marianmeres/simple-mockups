@@ -1,8 +1,8 @@
-<header class="wf--section__header"><h1>
+<header class="sm--section__header"><h1>
     Table of Contents
 </h1></header>
 
-<div class="wf--section__main"></div>
+<div class="sm--section__main"></div>
 
 <script>
 
@@ -36,7 +36,7 @@
 
         }
 
-        var $ul = $('<ol/>').appendTo($section.find('.wf--section__main'));
+        var $ul = $('<ol/>').appendTo($section.find('.sm--section__main'));
         _toc
             .filter(function(o){ return !o.depth; }) // top level only
             .sort(_sorter)

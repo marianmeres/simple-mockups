@@ -1,9 +1,9 @@
-<header class="wf--section__header">
-    <a href="#menu" class="wf--section__header-right">&#x2630;</a>
+<header class="sm--section__header">
+    <a href="#menu" class="sm--section__header-right">&#x2630;</a>
     <h1>Intro</h1>
 </header>
 
-<div class="wf--section__main">
+<div class="sm--section__main">
 
     <p>
         This demo shows the basic concept and usage of
