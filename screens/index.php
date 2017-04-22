@@ -8,7 +8,7 @@
     <p>
         This demo shows the basic concept and usage of
         <a href="https://github.com/marianmeres/simple-mockups">Simple Mockups</a>
-        &ndash; the html based app screen prototyping tool. Read more and check
+        &ndash; the ultra simple html based app screen prototyping tool. Read more and check
         the <a href="https://github.com/marianmeres/simple-mockups">source on GitHub</a>.
     </p>
 
