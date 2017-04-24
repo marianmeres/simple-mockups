@@ -114,6 +114,13 @@
     <script>
         var toc = {};
 
+        function screenSorter(a, b) {
+            if (a.id === 'index') return -1; // initial "index" special case
+            if (a.id < b.id) return -1;
+            if (a.id > b.id) return 1;
+            return 0;
+        }
+
         // helper to be used in screens
         function renderDirectChildrenNav(parentId, $container) {
             var parent = toc[parentId];
@@ -139,7 +146,7 @@
             if (children.length && $container && $container.length) {
                 $('<b>Navigation</b>').appendTo($container);
                 var $ul = $('<ul></ul>').appendTo($container);
-                children.forEach(function(o){
+                children.sort(screenSorter).forEach(function(o){
                     $('<li><a href="#' + o.id + '">' + o.title + '</a></li>').appendTo($ul);
                 })
             }
