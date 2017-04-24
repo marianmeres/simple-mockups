@@ -4,15 +4,10 @@
 </header>
 
 <div class="sm--section__main">
-
+    <div data-children-nav-placeholder></div>
 </div>
 
 
-<script>
-    $(document).one('screen:<?= $id ?>:show', function(e, $section){
-        renderDirectChildrenNav('<?= $id ?>', $section.find('.sm--section__main'));
-    });
-</script>
 
 
 

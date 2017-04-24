@@ -6,7 +6,7 @@
 <div class="sm--section__main">
 
     <ul>
-        <li><a href="#<?= $id ?>_settings">Settings</a> (intentionally broken link)</li>
+        <li><a href="#<?= $id ?>_settings">Settings</a> (intentionally missing target screen)</li>
         <li>...</li>
     </ul>
 

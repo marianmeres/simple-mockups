@@ -181,13 +181,13 @@
         }
 
         /**
-         * helper to be used in screens
          * @param parentId
          * @param $container
          */
         function renderDirectChildrenNav(parentId, $container) {
             var parent = toc[parentId];
-            if (!parent) return console.error('Parent (' + parentId + ') not found;');
+            if (!parent) return console.error('Parent (' + parentId + ') not found?!');
+            if (!$container || !$container.length) return; // valid no-op
 
             var children = [];
             $.each(toc, function(key, val){
@@ -196,7 +196,7 @@
                 }
             });
 
-            if (children.length && $container && $container.length) {
+            if (children.length) {
                 $('<b>Navigation</b>').appendTo($container);
                 var $ul = $('<ul></ul>').appendTo($container);
                 children.sort(screenSorter).forEach(function(o){
@@ -206,13 +206,18 @@
         }
 
         /**
-         * actual screen renderer
+         * @param id
          */
-        window.onhashchange = function() {
+        function renderScreen(id) {
             $('section').hide();
-            var id = window.location.hash.substr(1);
             if (id === '') id = 'index';
             var $current = $('#' + id);
+
+            // if showing for the first time, try to render children nav if placeholder is found
+            if ($current.length && !$current.data('was-shown')) {
+                $current.data('was-shown', true);
+                renderDirectChildrenNav(id, $current.find('[data-children-nav-placeholder]'));
+            }
 
             if (!$current.length) {
                 $current = $('#_not-found');
@@ -223,9 +228,12 @@
             $current.show();
             toc[id] && (document.title = toc[id].title + " | Simple Mockups");
             $(document).trigger('screen:' + id +':show', [$current]);
-        };
+        }
 
-        $(window).trigger('hashchange');
+        window.onhashchange = function() {
+            renderScreen(window.location.hash.substr(1));
+        };
+        renderScreen(window.location.hash.substr(1));
     </script>
 
 <?php

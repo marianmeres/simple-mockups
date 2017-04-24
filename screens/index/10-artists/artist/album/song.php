@@ -6,7 +6,7 @@
 <div class="sm--section__main">
 
     <p>
-        Show song details and play controls...
+        Show song details, play controls, rate options...
     </p>
 
 </div>
