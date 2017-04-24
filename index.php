@@ -113,35 +113,6 @@
     </style>
     <script>
         var toc = {};
-
-        function screenSorter(a, b) {
-            if (a.id === 'index') return -1; // initial "index" special case
-            if (a.id < b.id) return -1;
-            if (a.id > b.id) return 1;
-            return 0;
-        }
-
-        // helper to be used in screens
-        function renderDirectChildrenNav(parentId, $container) {
-            var parent = toc[parentId];
-            if (!parent) return console.error('Parent (' + parentId + ') not found;');
-
-            var children = [];
-            $.each(toc, function(key, val){
-                if (val.parentId === parentId && val.depth === parent.depth + 1) {
-                    children.push({id: key, title: toc[key].title})
-                }
-            });
-
-            if (children.length && $container && $container.length) {
-                $('<b>Navigation</b>').appendTo($container);
-                var $ul = $('<ul></ul>').appendTo($container);
-                children.sort(screenSorter).forEach(function(o){
-                    $('<li><a href="#' + o.id + '">' + o.title + '</a></li>').appendTo($ul);
-                })
-            }
-        }
-
     </script>
 </head>
 <body>
@@ -180,8 +151,12 @@
     </footer>
 
     <script>
-        //console.log(toc);
+
         var $br = $('nav.breadcrumb');
+
+        /**
+         * @param currentId
+         */
         function renderBreadcrumbs(currentId) {
             $br.html('');
             var path = [];
@@ -193,6 +168,46 @@
             });
         }
 
+        /**
+         * @param a
+         * @param b
+         * @returns {number}
+         */
+        function screenSorter(a, b) {
+            if (a.id === 'index') return -1; // initial "index" special case
+            if (a.id < b.id) return -1;
+            if (a.id > b.id) return 1;
+            return 0;
+        }
+
+        /**
+         * helper to be used in screens
+         * @param parentId
+         * @param $container
+         */
+        function renderDirectChildrenNav(parentId, $container) {
+            var parent = toc[parentId];
+            if (!parent) return console.error('Parent (' + parentId + ') not found;');
+
+            var children = [];
+            $.each(toc, function(key, val){
+                if (val.parentId === parentId && val.depth === parent.depth + 1) {
+                    children.push({id: key, title: toc[key].title})
+                }
+            });
+
+            if (children.length && $container && $container.length) {
+                $('<b>Navigation</b>').appendTo($container);
+                var $ul = $('<ul></ul>').appendTo($container);
+                children.sort(screenSorter).forEach(function(o){
+                    $('<li><a href="#' + o.id + '">' + o.title + '</a></li>').appendTo($ul);
+                })
+            }
+        }
+
+        /**
+         * actual screen renderer
+         */
         window.onhashchange = function() {
             $('section').hide();
             var id = window.location.hash.substr(1);
@@ -206,6 +221,7 @@
 
             renderBreadcrumbs(id);
             $current.show();
+            document.title = toc[id].title + " | Simple Mockups";
             $(document).trigger('screen:' + id +':show', [$current]);
         };
 
