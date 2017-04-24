@@ -221,7 +221,7 @@
 
             renderBreadcrumbs(id);
             $current.show();
-            document.title = toc[id].title + " | Simple Mockups";
+            toc[id] && (document.title = toc[id].title + " | Simple Mockups");
             $(document).trigger('screen:' + id +':show', [$current]);
         };
 
