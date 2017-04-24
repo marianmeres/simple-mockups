@@ -15,18 +15,23 @@
     <hr/>
 
     <p>
-        So, let's pretend we're prototyping a simple music player app. The navigation
-        flow of our app may look like this:
+        So, let's pretend we're prototyping a simple music player app...
     </p>
 
-    <ul>
-        <li><a href="#<?= $id ?>_10-artists">Artists</a></li>
-        <li><a href="#<?= $id ?>_20-albums">Albums</a></li>
-        <li><a href="#<?= $id ?>_30-songs">Songs</a></li>
-    </ul>
+    <div class="nav-placeholder"></div>
+
+    <p><small>
+        Note, that the above navigation is generated automatically.
+    </small></p>
 
 </div>
 
+
+<script>
+    $(document).one('screen:<?= $id ?>:show', function(e, $section){
+        renderDirectChildrenNav('<?= $id ?>', $section.find('.sm--section__main .nav-placeholder'));
+    });
+</script>
 
 
 

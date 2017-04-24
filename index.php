@@ -113,6 +113,38 @@
     </style>
     <script>
         var toc = {};
+
+        // helper to be used in screens
+        function renderDirectChildrenNav(parentId, $container) {
+            var parent = toc[parentId];
+            if (!parent) {
+                console.error('Parent (' + parentId + ') not found;');
+                return;
+            }
+
+            function _sorter(a, b) {
+                if (a.id === 'index') return -1; // initial "index" special case
+                if (a.id < b.id) return -1;
+                if (a.id > b.id) return 1;
+                return 0;
+            }
+
+            var children = [];
+            $.each(toc, function(key, val){
+                if (val.parentId === parentId && val.depth === parent.depth + 1) {
+                    children.push({id: key, title: toc[key].title})
+                }
+            });
+
+            if (children.length && $container && $container.length) {
+                $('<b>Navigation</b>').appendTo($container);
+                var $ul = $('<ul></ul>').appendTo($container);
+                children.forEach(function(o){
+                    $('<li><a href="#' + o.id + '">' + o.title + '</a></li>').appendTo($ul);
+                })
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -212,7 +244,7 @@ function _renderSection($f, $baseDir) {
     echo "</section>\n";
     echo "<script>\n";
         // we're saving jQuery's element reference for easier later hackings
-        echo "toc['$id'] = {\$el: \$('#$id'), depth: $depth}\n";
+        echo "toc['$id'] = {\$el: \$('#$id'), depth: $depth, parentId: '$parentId'}\n";
         echo "toc['$id'].title = toc['$id'].\$el.find('h1').text()\n";
     echo "</script>\n";
     echo "<!-- END: $id -->\n\n";

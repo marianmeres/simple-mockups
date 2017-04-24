@@ -8,6 +8,7 @@ Ultra simple html based app screen prototyping tool.
 * navigation between screens is as easy as `href="#screen-id"`
 * trivial PHP server side rendering (single file, ~20 lines of code)
 * table of contents and breadcrumbs automatically generated
+* js helper fn for child screens navigation
 * everything fully and easily hackable (js, html, css, php)
 * intended mainly as a navigation/structure prototyping tool, not as a visual one
 (although each screen is just a html `<section>` so there are no limits)

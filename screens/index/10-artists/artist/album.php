@@ -5,13 +5,14 @@
 
 <div class="sm--section__main">
 
-    <b>Songs</b>
-    <ul>
-        <li><a href="#<?= $id ?>_song">Alive</a></li>
-    </ul>
-
 </div>
 
+
+<script>
+    $(document).one('screen:<?= $id ?>:show', function(e, $section){
+        renderDirectChildrenNav('<?= $id ?>', $section.find('.sm--section__main'));
+    });
+</script>
 
 
 
