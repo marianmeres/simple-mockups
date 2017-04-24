@@ -140,11 +140,9 @@
     </main>
 
     <footer class="sm--footer">
-        <span>
-            Created by
-            <a href="https://github.com/marianmeres">Marian Meres</a>
-            with <a href="https://github.com/marianmeres/simple-mockups">Simple Mockups</a>
-        </span>
+        <small>
+            Created with <a href="https://github.com/marianmeres/simple-mockups">Simple Mockups</a>
+        </small>
         <span style="float: right">
             Content last updated: <?php echo date('Y-m-d', $lastMod); ?>
         </span>
