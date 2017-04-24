@@ -124,17 +124,7 @@
         // helper to be used in screens
         function renderDirectChildrenNav(parentId, $container) {
             var parent = toc[parentId];
-            if (!parent) {
-                console.error('Parent (' + parentId + ') not found;');
-                return;
-            }
-
-            function _sorter(a, b) {
-                if (a.id === 'index') return -1; // initial "index" special case
-                if (a.id < b.id) return -1;
-                if (a.id > b.id) return 1;
-                return 0;
-            }
+            if (!parent) return console.error('Parent (' + parentId + ') not found;');
 
             var children = [];
             $.each(toc, function(key, val){
