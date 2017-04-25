@@ -25,6 +25,6 @@ alphabetically by their filenames. If you need a specific order prefix the
 filename with digits just as I did in the [demo](https://github.com/marianmeres/simple-mockups/tree/master/screens/index).
 
 Screen id is generated from the relative file path where directory separators are 
-replaced with underscores. Long story short - usage of underscores in file names 
-won't work here...
+replaced with underscores. Long story short - usage of underscores in screen 
+file names may cause troubles...
 
